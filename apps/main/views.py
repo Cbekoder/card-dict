@@ -1,8 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from .models import Dictionary
 from .serializers import DictionarySerializer
+
+def redirect_to_docs(request):
+    return redirect('/docs/')
 
 class DictionaryListCreateAPIView(ListCreateAPIView):
     serializer_class = DictionarySerializer
