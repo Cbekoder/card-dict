@@ -8,6 +8,7 @@ from core.swagger.schema import swagger_urlpatterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include("apps.users.urls")),
+    path('auth/', include("apps.users.auth_urls")),
     path('', include("apps.main.urls"))
 ]
 
