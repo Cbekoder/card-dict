@@ -13,8 +13,8 @@ class BookSerializer(ModelSerializer):
 class DictionarySerializer(ModelSerializer):
     class Meta:
         model = Dictionary
-        fields = '__all__'
-        read_only_fields = ('translation', 'user', 'created_at', 'updated_at')
+        fields = ['id', 'base_lang', 'target_lang', 'word', 'translation', 'book']
+        read_only_fields = ('translation',)
 
 
 class BookDetailSerialzier(ModelSerializer):
