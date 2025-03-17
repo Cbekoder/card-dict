@@ -58,7 +58,7 @@ class DictionaryListCreateAPIView(ListCreateAPIView):
         queryset = Dictionary.objects.filter(user=self.request.user)
         book_id = self.request.query_params.get('book_id')
         if book_id:
-            queryset = queryset.filter(book=book_id)
+            queryset = queryset.filter(book__id=book_id)
         return queryset
 
     def perform_create(self, serializer):
